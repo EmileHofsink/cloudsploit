@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+        cloudsploit:
+                build: .
+                environment:
+                        - AZURE_APPLICATION_ID=
+                        - AZURE_KEY_VALUE=
+                        - AZURE_DIRECTORY_ID=
+                        - AZURE_SUBSCRIPTION_ID=
+                volumes:
+                  - $PWD:/output
+                command: --cloud azure --config ./config.js --csv=/output/file.csv --ignore-ok
